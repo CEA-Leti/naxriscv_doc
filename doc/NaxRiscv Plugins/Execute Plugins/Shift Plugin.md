@@ -1,4 +1,7 @@
 `ShiftPlugin` is the plugin that executes shift operations
+
+[code](https://github.com/SpinalHDL/NaxRiscv/blob/main/src/main/scala/naxriscv/execute/ShiftPlugin.scala)
+
 ___
 
 #### Parameters

@@ -1,6 +1,9 @@
 `SrcPlugin` is the plugin which defines the operand values for the following plugins `IntAluPlugin, BranchPlugin, ShiftPlugin`.
 The operand values come from the register file or from the instructions themselves for the immediate.
 It also calculates addition, subtraction, and"set if less than" operations, and sends the result to `IntAluPlugin`
+
+[code](https://github.com/SpinalHDL/NaxRiscv/blob/main/src/main/scala/naxriscv/execute/SrcPlugin.scala)
+
 ___
 
 #### Parameters

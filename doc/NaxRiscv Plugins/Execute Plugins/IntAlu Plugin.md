@@ -4,6 +4,9 @@
 - logical operations (xor, or, and)
 - load immediate and auipc instructions
 - "set if less than" instructions
+
+[code](https://github.com/SpinalHDL/NaxRiscv/blob/main/src/main/scala/naxriscv/execute/IntAluPlugin.scala)
+
 ___
 
 #### Parameters
