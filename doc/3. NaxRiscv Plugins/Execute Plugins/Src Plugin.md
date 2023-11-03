@@ -40,6 +40,8 @@ The stageables defined are :
 
 Once all the stageables have been defined, we can carry out the necessary operations depending on the instruction being processed.
 
+> **Reminder :** Stageables are variables that are transmitted through a pipeline, so a stageable filled in at stage 0 can be read two cycle later at stage 2.
+
 Firstly, depending on `SRC1_CTRL` and `SRC2_CTRL` which have their value set during the decode stage of `ExecuteUnitBase`, `ss.SRC1` and `ss.SRC2` take the needed value (register file value, if the instruction has a register as an operand, or immediate value if the instruction has an immediate as an operand, etc).
 
 These two stageables (`ss.SRC1` and `ss.SRC2`) are then passed to all the plugins that need them via the execute pipeline.
