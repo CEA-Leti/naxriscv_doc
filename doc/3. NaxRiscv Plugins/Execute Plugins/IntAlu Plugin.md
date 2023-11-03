@@ -33,6 +33,8 @@ This function :
 - sets its stageables(`ALU_CTRL`, `ALU_BITWISE_CTRL`) in function of microOp added
 - defines the `SrcPlugin` keys to know which operands to choose and which type of operation is
 
+> **Reminder :** Stageables are variables that are transmitted through a pipeline, so a stageable filled in at stage 0 can be read two cycle later at stage 2.
+
 **Micro Operations supported**
 - `ADD, ADDI`
 - `SUB`
@@ -82,22 +84,22 @@ Example for `AND` instruction :
 	- `PC` : operand 2 is the PC value
 
 - `Op` : type of operation, used by `SrcPlugin` to find out what operation it should perform, and to define some intern stageables.
-In fact, some operations such as `ADD` or `SUB` are calculated in the `SrcPlugin`, and `IntAluPlugin` takes the result directly.
-The 5 possible values are :
-- `ADD` : operation of type `ADD` (`ADD, ADDI, AUIPC, ADDW, ADDIW`)
-- `SUB` : operation of type `SUB` (`SUB, SUBW`)
-- `SRC1` : operation with only operand 1 (`LUI`)
-- `LESS` : operation of type `SLT` (`SLT, SLTI`)
-- `LESS_U` : operation of type `SLTU` (`SLTU, SLTIU`)
-As logical operations (`XOR, OR, AND`) are calculated in `IntAluPlugin`, we do not specify these keys for these operations.
-
-These stageable values are defined thanks to `Srckeys` list in the `add` function.
+	In fact, some operations such as `ADD` or `SUB` are calculated in the `SrcPlugin`, and `IntAluPlugin` takes the result directly.
+	The 5 possible values are :
+	- `ADD` : operation of type `ADD` (`ADD, ADDI, AUIPC, ADDW, ADDIW`)
+	- `SUB` : operation of type `SUB` (`SUB, SUBW`)
+	- `SRC1` : operation with only operand 1 (`LUI`)
+	- `LESS` : operation of type `SLT` (`SLT, SLTI`)
+	- `LESS_U` : operation of type `SLTU` (`SLTU, SLTIU`)
+	As logical operations (`XOR, OR, AND`) are calculated in `IntAluPlugin`, we do not specify these keys for these operations.
+	
+	These stageable values are defined thanks to `Srckeys` list in the `add` function.
 
 ___
 
 #### Logic
 
-Thanks to the setup zone, we've set up our plugin properly and it will run using the stageables we've defined.
+Thanks to the setup area, we've set up our plugin properly and it will run using the stageables we've defined.
 
 1. `SrcPlugin` sets the values of `ss.SRC1` and `ss.SRC2` according to the instruction decoded using `Srckeys`. The plugin does this 1 stage before the first pipeline execution stage, if `earlySrc = True`, which is the default.
 2. `SrcPlugin` calculates `ss.ADD_SUB` and `ss.LESS` according to the instruction decoded. In the same time, `IntAluPlugin` calculates the logical operation. Finally, the final result is stored in `ALU_RESULT` according to `ALU_BITWISE_CTRL` and `ALU_CTRL` values. These operations are performed by default during execution stage(0).
