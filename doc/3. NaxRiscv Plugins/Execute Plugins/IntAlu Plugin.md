@@ -33,7 +33,8 @@ This function :
 - sets its stageables(`ALU_CTRL`, `ALU_BITWISE_CTRL`) in function of microOp added
 - defines the `SrcPlugin` keys to know which operands to choose and which type of operation is
 
-> **Reminder :** Stageables are variables that are transmitted through a pipeline, so a stageable filled in at stage 0 can be read two cycle later at stage 2.
+> [!NOTE] 
+> Stageables are variables that are transmitted through a pipeline, so a stageable filled in at stage 0 can be read two cycle later at stage 2.
 
 **Micro Operations supported**
 - `ADD, ADDI`

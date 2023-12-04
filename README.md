@@ -24,9 +24,13 @@ There are two folders :
     - **2. Internal** : gives a schematic of the plugin's interior
 
 In the diagrams, links take you directly to the correct chapter in the associated `0. Presentation`.
-***Without clicking, but just by hovering over the link while pressing Ctrl, a tooltip will appear in the diagram.***
+
+> [!TIP]
+> Without clicking, but just by hovering over the link while pressing Ctrl, a tooltip will appear in the diagram.
 
 - **OoO Basics** : based on a [Georgia Tech course](https://www.udacity.com/course/high-performance-computer-architecture--ud007), this is a reminder of how an out-of-order core works.
+
+> [!CAUTION]
 > It is strongly recommended to see the OoO Basics folder and the corresponding chapters in the online course before reading the NaxRiscv code and documentation.
 
 

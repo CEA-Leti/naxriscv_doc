@@ -28,7 +28,8 @@ This function :
 - sets its stageables(`LEFT`, `SIGNED`, `IS_W`, `IS_W_RIGHT`) in function of microOp added
 - defines the `SrcPlugin` keys to know which operands to choose
 
-> **Reminder :** Stageables are variables that are transmitted through a pipeline, so a stageable filled in at stage 0 can be read two cycle later at stage 2.
+> [!NOTE] 
+> Stageables are variables that are transmitted through a pipeline, so a stageable filled in at stage 0 can be read two cycle later at stage 2.
 
 **Micro Operations supported**
 - logical left shift `SLL, SLLI`
