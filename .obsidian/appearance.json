@@ -4,5 +4,6 @@
   "enabledCssSnippets": [
     "youtube-embed"
   ],
-  "showViewHeader": true
+  "showViewHeader": true,
+  "cssTheme": "Blue Topaz"
 }
